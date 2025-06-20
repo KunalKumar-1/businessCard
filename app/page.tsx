@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from 'react';
-import { Phone, Mail, MapPin, Download, ChevronLeft, ChevronRight, MessageCircleCode ,Facebook, Twitter, Linkedin, MessageCircle, Building2 } from 'lucide-react';
+import { Phone, Mail, MapPin, Download, ChevronLeft, ChevronRight, MessageCircleCode ,MessageCircle, Instagram ,Facebook} from 'lucide-react';
 
 export default function BusinessCard() {
   // const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -93,7 +93,7 @@ export default function BusinessCard() {
   const prevPrestigeLeelaImage = () => setPrestigeLeelaIndex((prev) => (prev - 1 + prestigeLeelaImages.length) % prestigeLeelaImages.length);
 
   const handleCall = () => {
-    window.location.href = 'tel:+919507956725';
+    window.location.href = 'tel:+919945466887';
   };
 
   const handleSaveContact = () => {
@@ -161,16 +161,16 @@ export default function BusinessCard() {
         <div className="px-6 py-4 bg-white border-b">
           <div className="flex justify-center space-x-4">
             <button className="p-2 border border-gray-200 rounded-full hover:bg-blue-50 hover:border-blue-300 transition-all duration-300"
-            onClick={() => window.open('https://wa.me/+919507956725', '_blank')}>
+            onClick={() => window.open('https://wa.me/+919945466887', '_blank')}>
               <MessageCircleCode className="w-4 h-4 text-blue-600" />
             </button>
             <button className="p-2 border border-gray-200 rounded-full hover:bg-blue-50 hover:border-blue-300 transition-all duration-300"
-            onClick={() => window.open('https://x.com/Kunaltwts', '_blank')}>
-              <Twitter className="w-4 h-4 text-sky-500" />
+            onClick={() => window.open('https://www.instagram.com/dadore.in/', '_blank')}>
+              <Instagram className="w-4 h-4 text-sky-500" />
             </button>
             <button className="p-2 border border-gray-200 rounded-full hover:bg-blue-50 hover:border-blue-300 transition-all duration-300"
-            onClick={() => window.open('https://www.linkedin.com/in/kunalkumar123/', '_blank')}>
-              <Linkedin className="w-4 h-4 text-blue-700" />
+            onClick={() => window.open('https://www.facebook.com/dadore.interiors.5/', '_blank')}>
+              <Facebook className="w-4 h-4 text-blue-700" />
             </button>
           </div>
         </div>
