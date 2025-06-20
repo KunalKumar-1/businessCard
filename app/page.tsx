@@ -98,13 +98,13 @@ export default function BusinessCard() {
 
   const handleSaveContact = () => {
     const vCard =`BEGIN:VCARD
-                  VERSION:3.0
-                  FN:D'Adore
-                  ORG:D'Adore Interiors Inc.
-                  TEL:+919945466887
-                  EMAIL:DAdore@gmail.com
-                  URL:https://www.dadore.in/
-                  END:VCARD`;
+VERSION:3.0
+FN:D'Adore
+ORG:D'Adore Interiors Inc.
+TEL:+919945466887
+EMAIL:DAdore@gmail.com
+URL:https://www.dadore.in/
+END:VCARD`;
     
     const blob = new Blob([vCard], { type: 'text/vcard' });
     const url = window.URL.createObjectURL(blob);
@@ -125,7 +125,7 @@ export default function BusinessCard() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
-      <div className="max-w-md mx-auto bg-white shadow-2xl rounded-3xl overflow-hidden">
+      <div className="max-w-md mx-auto bg-white shadow-2xl rounded-sm overflow-hidden">
         <div className="relative bg-gradient-to-r from-blue-600 to-purple-600 p-8 text-white text-center">
           <div className="absolute inset-0 bg-black/10"></div>
           <div className="relative z-10">
@@ -251,7 +251,6 @@ export default function BusinessCard() {
             </div>
           )}
         </div>
-
 
         {/* SOBHA PALM COURT GALLERY */}
         <div className="px-6 py-4 bg-white border-b">
