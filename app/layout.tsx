@@ -5,9 +5,9 @@ import { Inter } from 'next/font/google';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Tropical Spice Exporters',
-  description: 'Premium quality spices and tropical products exporter since 1985. Contact us for wholesale spice orders and distribution partnerships.',
-  keywords: 'spice exporters, tropical products, wholesale spices, organic spices, spice distribution, food exporters',
+  title: 'DAdore Interiors',
+  description: 'DAdore Interiors has been providing quality residential interior design services since 2017. Our team of talented designers is dedicated to crafting personalized interior designs that meet each clients unique style and preferences. Let us bring your dream home to life.',
+  keywords: 'PEBBLE BAY, SOBHA PALM COURT, PRETIGE LEELA RESIDENCY',
   authors: [{ name: 'Kunal Kumar' }],
   viewport: 'width=device-width, initial-scale=1',
 };
