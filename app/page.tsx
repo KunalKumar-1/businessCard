@@ -8,11 +8,13 @@ export default function BusinessCard() {
   const [pebbleBayIndex, setPebbleBayIndex] = useState(0);
   const [sobhaPalmCourtIndex, setSobhaPalmCourtIndex] = useState(0);
   const [prestigeLeelaIndex, setPrestigeLeelaIndex] = useState(0);
+  const [birlaAlokyaIndex, setBirlaAlokyaIndex] = useState(0);
 
   // const [showGallery, setShowGallery] = useState(true);
   const [showPebbleBay, setShowPebbleBay] = useState(true);
   const [showSobhaPalmCourt, setShowSobhaPalmCourt] = useState(true);
   const [showPrestigeLeela, setShowPrestigeLeela] = useState(true);
+  const [showBirlaAlokya, setShowBirlaAlokya] = useState(true);
 
   const [showInquiry, setShowInquiry] = useState(false);
   const [formData, setFormData] = useState({
@@ -54,32 +56,53 @@ export default function BusinessCard() {
     "https://static.wixstatic.com/media/f55b92_07d9cdf236be437b82d1aa5722e2ea79~mv2.jpg/v1/fit/w_2520,h_654,q_90,enc_avif,quality_auto/f55b92_07d9cdf236be437b82d1aa5722e2ea79~mv2.jpg",
   ];
 
+      const birlaAlokyaImages = [
+    "https://ik.imagekit.io/9xuslizm5i/IMG-20250627-WA0019.jpg?updatedAt=1751028308951",
+    "https://ik.imagekit.io/9xuslizm5i/IMG-20250627-WA0017.jpg?updatedAt=1751028308583",
+    "https://ik.imagekit.io/9xuslizm5i/IMG-20250627-WA0018.jpg?updatedAt=1751028308482",
+    "https://ik.imagekit.io/9xuslizm5i/IMG-20250627-WA0013.jpg?updatedAt=1751028304710",
+    "https://ik.imagekit.io/9xuslizm5i/IMG-20250627-WA0015.jpg?updatedAt=1751028304605",
+    "https://ik.imagekit.io/9xuslizm5i/IMG-20250627-WA0012.jpg?updatedAt=1751028304595",
+    "https://ik.imagekit.io/9xuslizm5i/IMG-20250627-WA0016.jpg?updatedAt=1751028304567",
+    "https://ik.imagekit.io/9xuslizm5i/IMG-20250627-WA0010.jpg?updatedAt=1751028304574",
+    "https://ik.imagekit.io/9xuslizm5i/IMG-20250627-WA0009.jpg?updatedAt=1751028304578",
+    "https://ik.imagekit.io/9xuslizm5i/IMG-20250627-WA0014.jpg?updatedAt=1751028304541",
+    "https://ik.imagekit.io/9xuslizm5i/IMG-20250627-WA0007.jpg?updatedAt=1751028304490",
+    "https://ik.imagekit.io/9xuslizm5i/IMG-20250627-WA0008.jpg?updatedAt=1751028304438",
+    "https://ik.imagekit.io/9xuslizm5i/IMG-20250627-WA0011.jpg?updatedAt=1751028304442",
+  ];
+
   const companyServices = [
    {
-    title: "Residential Interior Design",
+    title: "Commercial & Residential Interior Design",
     image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
-    description: "Custom home interiors tailored to your unique lifestyle and preferences"
+    description: "Tailored design solutions for both commercial spaces and residential homes, crafted to reflect your style and functionality needs."
   },
   {
-    title: "Space Planning",
+    title: "End-to-End Interior Solutions (Turnkey Projects)",
     image: "https://static.wixstatic.com/media/f55b92_131b44e1a95b419abbd73e8084178265~mv2.jpg/v1/fit/w_2520,h_654,q_90,enc_avif,quality_auto/f55b92_131b44e1a95b419abbd73e8084178265~mv2.jpg",
-    description: "Optimized layouts that maximize functionality and flow in your living spaces"
-  },
-  {
-    title: "Luxury Finishes",
-    image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6",
-    description: "Premium materials and exquisite detailing for sophisticated interiors"
+    description: "Comprehensive interior services under one roof—from concept to completion—making the process seamless and hassle-free."
   },
   {
     title: "Custom Furniture",
-    image: "https://static.wixstatic.com/media/f55b92_a8361df38097436f91b6910d3827956a~mv2.jpg/v1/fit/w_2520,h_1330,q_90,enc_avif,quality_auto/f55b92_a8361df38097436f91b6910d3827956a~mv2.jpg",
-    description: "Bespoke furniture pieces designed specifically for your space"
+    image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6",
+    description: "High-quality, custom-designed furniture with premium materials and flawless finishes—all at competitive pricing."
   },
   {
-    title: "Lighting Design",
-    image: "https://images.unsplash.com/photo-1513519245088-0e12902e5a38",
-    description: "Strategic lighting solutions that enhance ambiance and functionality"
+    title: "Residential Construction & Development",
+    image: "https://static.wixstatic.com/media/f55b92_a8361df38097436f91b6910d3827956a~mv2.jpg/v1/fit/w_2520,h_1330,q_90,enc_avif,quality_auto/f55b92_a8361df38097436f91b6910d3827956a~mv2.jpg",
+    description: "From architectural planning to construction execution, we deliver quality-built homes on time and with meticulous attention to detail."
   },
+  {
+    title: "Kitchen Interiors",
+    image: "https://images.unsplash.com/photo-1513519245088-0e12902e5a38",
+    description: "Experts in kitchen design—from sleek, modern layouts to fully customized panels and fittings tailored to your space and lifestyle"
+  },
+  {
+    title: "Interior Renovations",
+    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+    description: "Transform existing interiors with our renovation services—whether it's a complete overhaul or functional upgrades, we bring your space back to life beautifully"
+  }
   ];
 
   // Navigation functions for each gallery
@@ -92,6 +115,9 @@ export default function BusinessCard() {
   const nextPrestigeLeelaImage = () => setPrestigeLeelaIndex((prev) => (prev + 1) % prestigeLeelaImages.length);
   const prevPrestigeLeelaImage = () => setPrestigeLeelaIndex((prev) => (prev - 1 + prestigeLeelaImages.length) % prestigeLeelaImages.length);
 
+  const nextBirlaAlokyaImages = () => setBirlaAlokyaIndex((prev) => (prev + 1) % birlaAlokyaImages.length);
+  const prevBirlaAlokyaImages = () => setBirlaAlokyaIndex((prev) => (prev - 1 + birlaAlokyaImages.length) % birlaAlokyaImages.length);
+
   const handleCall = () => {
     window.location.href = 'tel:+919945466887';
   };
@@ -99,10 +125,10 @@ export default function BusinessCard() {
   const handleSaveContact = () => {
     const vCard =`BEGIN:VCARD
 VERSION:3.0
-FN:D'Adore
-ORG:D'Adore Interiors Inc.
+FN:D'adore
+ORG:D'adore Interiors LLP.
 TEL:+919945466887
-EMAIL:DAdore@gmail.com
+EMAIL:dadoreinterior@gmail.com
 URL:https://www.dadore.in/
 END:VCARD`;
     
@@ -133,16 +159,16 @@ END:VCARD`;
               <div className="w-24 h-24 mx-auto mb-4 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm overflow-hidden border-2 border-white/30 shadow-lg">
               <img 
                 src="https://static.wixstatic.com/media/f55b92_c42b7a50245d4a08ae36542ccfaf1c64~mv2.png" 
-                alt="D'Adore Interiors Logo"
+                alt="D'adore Interiors Logo"
                 className="w-full h-full object-cover rounded-full transform hover:scale-110 transition-transform duration-300"
               />
             </div>
-            {/* enhancing the text */}
+
             <h1 className="text-4xl font-bold mb-2 font-sans">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-amber-200 to-white">
-                D'Adore
+              <span className="bg-clip-text text-transparent bg-gradient-to-r text-white">
+                D'adore
               </span>
-              <span className="text-white ml-2">Interiors</span>
+              <span className="text-white ml-2">Interiors LLP</span>
             </h1>
             
             {/* Styling a Tagline */}
@@ -366,9 +392,66 @@ END:VCARD`;
           )}
         </div>
 
+        {/* Birla alokya GAllery */}
+        <div className="px-6 py-4 bg-white border-b">
+          <button 
+            onClick={() => setShowBirlaAlokya(!showBirlaAlokya)}
+            className="w-full text-left font-semibold text-gray-700 hover:text-blue-600 transition-colors duration-300 flex items-center justify-between"
+          >
+            <span className='text-lg'>BIRLA ALOKYA</span>
+            <span>{showBirlaAlokya ? '▼' : '▶'}</span>
+          </button>
+          
+          {showBirlaAlokya && (
+            <div className="mt-4 space-y-4">
+              <div className="relative bg-gray-100 rounded-xl overflow-hidden">
+                <img 
+                  src={birlaAlokyaImages[birlaAlokyaIndex]} 
+                  alt="Pebble Bay Gallery" 
+                  className="w-full h-48 object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                <button 
+                  onClick={prevBirlaAlokyaImages}
+                  className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2"
+                >
+                  <ChevronLeft className="w-4 h-4" />
+                </button>
+                <button 
+                  onClick={nextBirlaAlokyaImages}
+                  className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2"
+                >
+                  <ChevronRight className="w-4 h-4" />
+                </button>
+                <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-1">
+                  {pebbleBayImages.map((_, index) => (
+                    <div 
+                      key={index}
+                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                        index === birlaAlokyaIndex ? 'bg-white' : 'bg-white/50'
+                      }`}
+                    />
+                  ))}
+                </div>
+              </div>
+              <div className="flex overflow-x-auto space-x-2 pb-2">
+                {birlaAlokyaImages.map((img, index) => (
+                  <img
+                    key={index}
+                    src={img}
+                    alt={`Pebble Bay Thumbnail ${index}`}
+                    className={`w-16 h-16 object-cover rounded-md cursor-pointer border-2 ${birlaAlokyaIndex === index ? 'border-blue-500' : 'border-transparent'}`}
+                    onClick={() => setBirlaAlokyaIndex(index)}
+                  />
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+
         {/* added extra 3 */}
         <div className="px-6 py-4 bg-white border-b">
-          <h3 className="font-semibold text-gray-700 mb-4 text-lg">Our Services</h3>
+          <h3 className="font-semibold text-gray-700 mb-4 text-lg">In Our Services</h3>
           <div className="grid grid-cols-1 gap-3">
             {companyServices.map((item, index) => (
               <div key={index} className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 transform hover:scale-[1.02]">
@@ -388,9 +471,9 @@ END:VCARD`;
 
         {/* About Our Company */}
         <div className="px-6 py-6 bg-white border-b">
-          <h3 className="font-semibold text-gray-800 mb-4 text-xl">About D'Adore Interiors</h3>
+          <h3 className="font-semibold text-gray-800 mb-4 text-xl">About Us</h3>
           <p className="text-sm text-gray-600 leading-relaxed mb-4 italic">
-            Since 2017, D'Adore Interiors has been transforming spaces across the region with our signature blend of luxury and functionality. Our award-winning team of designers specializes in creating bespoke residential interiors that reflect each client's personality while enhancing everyday living.
+            Since 2017, D'adore Interiors has been transforming spaces across the region with our signature blend of luxury and functionality. Our award-winning team of designers specializes in creating bespoke residential interiors that reflect each client's personality while enhancing everyday living.
           </p>
           
           <div className="relative bg-gradient-to-r from-blue-600 to-purple-600 p-8 text-white text-center rounded-lg">
@@ -399,15 +482,15 @@ END:VCARD`;
             <div className="w-24 h-24 mx-auto mb-4 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm overflow-hidden border-2 border-white/30 shadow-lg">
               <img 
                 src="https://static.wixstatic.com/media/f55b92_c42b7a50245d4a08ae36542ccfaf1c64~mv2.png" 
-                alt="D'Adore Interiors Logo"
+                alt="D'adore Interiors Logo"
                 className="w-full h-full object-cover rounded-full transform hover:scale-110 transition-transform duration-300"
               />
               </div>
               <h1 className="text-4xl font-bold mb-2 font-serif tracking-tight">
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-amber-200 to-white">
-                  D'Adore
+                <span className="bg-clip-text text-transparent bg-gradient-to-r text-white">
+                  D'adore
                 </span>
-                <span className="text-white ml-2">Interiors</span>
+                <span className="text-white ml-1">Interiors LLP</span>
               </h1>
               <p className="text-blue-100 text-sm font-light tracking-wider mb-1">EXPERIENCE LUXURIOUS LIVING</p>
               <p className="text-blue-100 text-xs font-medium opacity-90">Crafting dream spaces since 2017</p>
@@ -415,8 +498,9 @@ END:VCARD`;
           </div>
           <div className="flex flex-wrap gap-2 mt-4">
             <span className="px-3 py-1.5 bg-purple-50 text-purple-700 text-xs rounded-full font-medium">Luxury Design</span>
-            <span className="px-3 py-1.5 bg-purple-50 text-purple-700 text-xs rounded-full font-medium">Personalized Solutions</span>
+            <span className="px-3 py-1.5 bg-purple-50 text-purple-700 text-xs rounded-full font-medium">Customised Solutions</span>
             <span className="px-3 py-1.5 bg-purple-50 text-purple-700 text-xs rounded-full font-medium">Attention to Detail</span>
+            <span className="px-3 py-1.5 bg-purple-50 text-purple-700 text-xs rounded-full font-medium">customized solutions</span>
           </div>
         </div>
 
@@ -424,8 +508,7 @@ END:VCARD`;
         <div className="px-6 py-4 bg-white border-b">
           <button 
             onClick={() => setShowInquiry(true)}
-            className="w-full bg-amber-600 hover:bg-amber-700 text-white rounded-xl py-3 transition-all duration-300 transform hover:scale-105 flex items-center justify-center"
-          >
+            className="w-full bg-amber-600 hover:bg-amber-700 text-white rounded-xl py-3 transition-all duration-300 transform hover:scale-105 flex items-center justify-center">
             <MessageCircle className="w-4 h-4 mr-2" />
             Inquires
           </button>
@@ -589,7 +672,7 @@ END:VCARD`;
                   </div>
                   <div className="relative">
                     <p className={`text-gray-600 italic transition-all duration-300 ${!expanded.testimonial2 ? 'line-clamp-3' : ''}`}>
-                      "We approached D'Adore based on the recommendation by our interior designer and it turned out to be exactly what we were looking for. Sagar was approachable for any query and his work style is thoroughly professional right from maintaining the check list, providing details of the work schedule, costing, etc. He listens to the requirements carefully and endevors to fulfill them with the best solutions. A glimpse of before and after work pics speak all. In a nutshell, A wholesome solution for all the services required for home renovation."
+                      "We approached D'adore based on the recommendation by our interior designer and it turned out to be exactly what we were looking for. Sagar was approachable for any query and his work style is thoroughly professional right from maintaining the check list, providing details of the work schedule, costing, etc. He listens to the requirements carefully and endevors to fulfill them with the best solutions. A glimpse of before and after work pics speak all. In a nutshell, A wholesome solution for all the services required for home renovation."
                     </p>
                     <button 
                       onClick={() => setExpanded(prev => ({...prev, testimonial2: !prev.testimonial2}))}
@@ -629,6 +712,73 @@ END:VCARD`;
                     </button>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+
+            {/* About Me Section - */}
+          <div className="px-6 py-8 bg-white border-b">
+            <div className="text-center mb-6">
+              <h3 className="text-2xl font-serif font-bold text-gray-800 relative inline-block">
+                About Me
+                <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 to-amber-600 rounded-full"></span>
+              </h3>
+            </div>
+            
+            <div className="flex flex-col md:flex-row items-center gap-6 mb-6">
+              <div className="relative w-32 h-32 flex-shrink-0">
+                <div className="absolute inset-0 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full transform rotate-6"></div>
+                <img 
+                  src="https://static.wixstatic.com/media/f55b92_c42b7a50245d4a08ae36542ccfaf1c64~mv2.png" 
+                  alt="Founder"
+                  className="relative w-full h-full rounded-full object-cover border-4 border-white shadow-lg"
+                />
+              </div>
+              
+              <div className="text-center md:text-left">
+                <h4 className="text-xl font-bold text-gray-800 mb-1">Founder's name</h4>
+                <p className="text-amber-600 font-medium mb-3">Founder</p>
+                <div className="flex justify-center md:justify-start space-x-2 mb-4">
+                  <div className="w-8 h-1 bg-amber-400 rounded-full"></div>
+                  <div className="w-4 h-1 bg-amber-400 rounded-full"></div>
+                  <div className="w-1 h-1 bg-amber-400 rounded-full"></div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="space-y-4 text-gray-600">
+              <p className="leading-relaxed text-justify">
+                I founded D'adore Interior LLP in 2017 with a singular vision: to democratize exceptional design. What began as a passion for transforming blank spaces into soulful environments has evolved into a practice that has touched hundreds of homes and commercial spaces across Bangalore.
+              </p>
+              
+              <p className="leading-relaxed text-justify">
+                With <span className="font-semibold text-amber-600">12+ years of hands-on experience</span>, I've cultivated a design philosophy that balances aesthetic excellence with functional pragmatism. My approach is deeply collaborative—working closely with clients, contractors, and craftsmen to navigate on-site challenges and deliver solutions that stand the test of time.
+              </p>
+              
+              <div className="relative bg-amber-50 rounded-lg p-4 border-l-4 border-amber-400 my-4">
+                <div className="absolute top-0 left-0 transform -translate-y-2 text-amber-500">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                  </svg>
+                </div>
+                <p className="italic text-gray-700 pl-6">
+                  "At D'adore, we don't just design spaces—we craft the backdrop for life's most meaningful moments."
+                </p>
+              </div>
+            </div>
+            
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mt-6">
+              <div className="bg-gradient-to-br from-amber-50 to-amber-100 p-3 rounded-lg border border-amber-200 text-center">
+                <div className="text-2xl font-bold text-amber-600">12+</div>
+                <div className="text-xs font-medium text-amber-800">Years Experience</div>
+              </div>
+              <div className="bg-gradient-to-br from-amber-50 to-amber-100 p-3 rounded-lg border border-amber-200 text-center">
+                <div className="text-2xl font-bold text-amber-600">250+</div>
+                <div className="text-xs font-medium text-amber-800">Projects Completed</div>
+              </div>
+              <div className="bg-gradient-to-br from-amber-50 to-amber-100 p-3 rounded-lg border border-amber-200 text-center">
+                <div className="text-2xl font-bold text-amber-600">100%</div>
+                <div className="text-xs font-medium text-amber-800">Client Satisfaction</div>
               </div>
             </div>
           </div>
