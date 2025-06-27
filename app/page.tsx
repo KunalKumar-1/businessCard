@@ -9,12 +9,14 @@ export default function BusinessCard() {
   const [sobhaPalmCourtIndex, setSobhaPalmCourtIndex] = useState(0);
   const [prestigeLeelaIndex, setPrestigeLeelaIndex] = useState(0);
   const [birlaAlokyaIndex, setBirlaAlokyaIndex] = useState(0);
+  const [JpIndex, setJpIndex] = useState(0);
 
   // const [showGallery, setShowGallery] = useState(true);
   const [showPebbleBay, setShowPebbleBay] = useState(true);
   const [showSobhaPalmCourt, setShowSobhaPalmCourt] = useState(true);
   const [showPrestigeLeela, setShowPrestigeLeela] = useState(true);
   const [showBirlaAlokya, setShowBirlaAlokya] = useState(true);
+  const [showJP, setShowJp] = useState(true);
 
   const [showInquiry, setShowInquiry] = useState(false);
   const [formData, setFormData] = useState({
@@ -29,8 +31,7 @@ export default function BusinessCard() {
   testimonial2: false,
   testimonial3: false
 });
-
-  // gallery images links
+  // gallery images links for now will add it in public later
   const pebbleBayImages = [
     "https://static.wixstatic.com/media/f55b92_1b51aed4df8143baabab4453f3a92af8~mv2.jpg/v1/fit/w_2520,h_654,q_90,enc_avif,quality_auto/f55b92_1b51aed4df8143baabab4453f3a92af8~mv2.jpg",
     "https://static.wixstatic.com/media/f55b92_a0bef7fd913543f884929d2e0f7f7d58~mv2.jpg/v1/fit/w_2520,h_654,q_90,enc_avif,quality_auto/f55b92_a0bef7fd913543f884929d2e0f7f7d58~mv2.jpg",
@@ -70,6 +71,18 @@ export default function BusinessCard() {
     "https://ik.imagekit.io/9xuslizm5i/IMG-20250627-WA0007.jpg?updatedAt=1751028304490",
     "https://ik.imagekit.io/9xuslizm5i/IMG-20250627-WA0008.jpg?updatedAt=1751028304438",
     "https://ik.imagekit.io/9xuslizm5i/IMG-20250627-WA0011.jpg?updatedAt=1751028304442",
+  ];
+
+  const jpImages = [
+    "https://ik.imagekit.io/9xuslizm5i/JP%20Nagar%20Primero%20Morado/IMG-20250627-WA0034.jpg?updatedAt=1751034680845",
+    "https://ik.imagekit.io/9xuslizm5i/JP%20Nagar%20Primero%20Morado/IMG-20250627-WA0026.jpg?updatedAt=1751034680716",
+    "https://ik.imagekit.io/9xuslizm5i/JP%20Nagar%20Primero%20Morado/IMG-20250627-WA0024.jpg?updatedAt=1751034684463",
+    "https://ik.imagekit.io/9xuslizm5i/JP%20Nagar%20Primero%20Morado/IMG-20250627-WA0022.jpg?updatedAt=1751034680901",
+    "https://ik.imagekit.io/9xuslizm5i/JP%20Nagar%20Primero%20Morado/IMG-20250627-WA0031.jpg?updatedAt=1751034683982",
+    "https://ik.imagekit.io/9xuslizm5i/JP%20Nagar%20Primero%20Morado/IMG-20250627-WA0023.jpg?updatedAt=1751034679950",
+    "https://ik.imagekit.io/9xuslizm5i/JP%20Nagar%20Primero%20Morado/IMG-20250627-WA0032.jpg?updatedAt=1751034679975",
+    "https://ik.imagekit.io/9xuslizm5i/JP%20Nagar%20Primero%20Morado/IMG-20250627-WA0035.jpg?updatedAt=1751034680758",
+    "https://ik.imagekit.io/9xuslizm5i/JP%20Nagar%20Primero%20Morado/IMG-20250627-WA0030.jpg?updatedAt=1751034683916"
   ];
 
   const companyServices = [
@@ -118,6 +131,9 @@ export default function BusinessCard() {
   const nextBirlaAlokyaImages = () => setBirlaAlokyaIndex((prev) => (prev + 1) % birlaAlokyaImages.length);
   const prevBirlaAlokyaImages = () => setBirlaAlokyaIndex((prev) => (prev - 1 + birlaAlokyaImages.length) % birlaAlokyaImages.length);
 
+  const nextJpImage = () => setJpIndex((prev) => (prev + 1) % jpImages.length);
+  const prevJpImage = () => setJpIndex((prev) => (prev - 1 + jpImages.length) % jpImages.length);
+
   const handleCall = () => {
     window.location.href = 'tel:+919945466887';
   };
@@ -157,16 +173,16 @@ END:VCARD`;
           <div className="relative z-10">
             {/* Logo Container with subtle shine effect */}
               <div className="w-24 h-24 mx-auto mb-4 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm overflow-hidden border-2 border-white/30 shadow-lg">
-              <img 
+              <img
                 src="https://static.wixstatic.com/media/f55b92_c42b7a50245d4a08ae36542ccfaf1c64~mv2.png" 
-                alt="D'adore Interiors Logo"
+                alt="D&apos;adore Interiors Logo"
                 className="w-full h-full object-cover rounded-full transform hover:scale-110 transition-transform duration-300"
               />
             </div>
 
             <h1 className="text-4xl font-bold mb-2 font-sans">
               <span className="bg-clip-text text-transparent bg-gradient-to-r text-white">
-                D'adore
+                D&apos;adore
               </span>
               <span className="text-white ml-2">Interiors LLP</span>
             </h1>
@@ -183,6 +199,7 @@ END:VCARD`;
             </p>
           </div>
         </div>  
+
         {/* adding the links of social media */}
         <div className="px-6 py-4 bg-white border-b">
           <div className="flex justify-center space-x-4">
@@ -234,7 +251,7 @@ END:VCARD`;
           {showPebbleBay && (
             <div className="mt-4 space-y-4">
               <div className="relative bg-gray-100 rounded-xl overflow-hidden">
-                <img 
+                <img
                   src={pebbleBayImages[pebbleBayIndex]} 
                   alt="Pebble Bay Gallery" 
                   className="w-full h-48 object-cover"
@@ -291,7 +308,7 @@ END:VCARD`;
           {showSobhaPalmCourt && (
             <div className="mt-4 space-y-4">
               <div className="relative bg-gray-100 rounded-xl overflow-hidden">
-                <img 
+                <img
                   src={sobhaPalmCourtImages[sobhaPalmCourtIndex]} 
                   alt="Sobha Palm Court Gallery" 
                   className="w-full h-48 object-cover"
@@ -348,7 +365,7 @@ END:VCARD`;
           {showPrestigeLeela && (
             <div className="mt-4 space-y-4">
               <div className="relative bg-gray-100 rounded-xl overflow-hidden">
-                <img 
+                <img
                   src={prestigeLeelaImages[prestigeLeelaIndex]} 
                   alt="Prestige Leela Residency Gallery" 
                   className="w-full h-48 object-cover"
@@ -405,7 +422,7 @@ END:VCARD`;
           {showBirlaAlokya && (
             <div className="mt-4 space-y-4">
               <div className="relative bg-gray-100 rounded-xl overflow-hidden">
-                <img 
+                <img
                   src={birlaAlokyaImages[birlaAlokyaIndex]} 
                   alt="Pebble Bay Gallery" 
                   className="w-full h-48 object-cover"
@@ -449,6 +466,63 @@ END:VCARD`;
           )}
         </div>
 
+          {/* JP Gallery */}
+        <div className="px-6 py-4 bg-white border-b">
+          <button 
+            onClick={() => setShowJp(!showJP)}
+            className="w-full text-left font-semibold text-gray-700 hover:text-blue-600 transition-colors duration-300 flex items-center justify-between"
+          >
+            <span className='text-lg'>JP NAGAR PRIMERO MORADO</span>
+            <span>{showJP ? '▼' : '▶'}</span>
+          </button>
+          
+          {showJP && (
+            <div className="mt-4 space-y-4">
+              <div className="relative bg-gray-100 rounded-xl overflow-hidden">
+                <img 
+                  src={jpImages[JpIndex]} 
+                  alt="JP Project Gallery" 
+                  className="w-full h-48 object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                <button 
+                  onClick={prevJpImage}
+                  className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2"
+                >
+                  <ChevronLeft className="w-4 h-4" />
+                </button>
+                <button 
+                  onClick={nextJpImage}
+                  className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2"
+                >
+                  <ChevronRight className="w-4 h-4" />
+                </button>
+                <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-1">
+                  {jpImages.map((_, index) => (
+                    <div 
+                      key={index}
+                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                        index === JpIndex ? 'bg-white' : 'bg-white/50'
+                      }`}
+                    />
+                  ))}
+                </div>
+              </div>
+              <div className="flex overflow-x-auto space-x-2 pb-2">
+                {jpImages.map((img, index) => (
+                  <img
+                    key={index}
+                    src={img}
+                    alt={`JP Project Thumbnail ${index}`}
+                    className={`w-16 h-16 object-cover rounded-md cursor-pointer border-2 ${JpIndex === index ? 'border-blue-500' : 'border-transparent'}`}
+                    onClick={() => setJpIndex(index)}
+                  />
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+
         {/* added extra 3 */}
         <div className="px-6 py-4 bg-white border-b">
           <h3 className="font-semibold text-gray-700 mb-4 text-lg">In Our Services</h3>
@@ -456,9 +530,7 @@ END:VCARD`;
             {companyServices.map((item, index) => (
               <div key={index} className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 transform hover:scale-[1.02]">
                 <div className="flex">
-                  <img src={item.image} 
-                    alt={item.title}
-                    className="w-20 h-20 object-cover"/>
+                  <img src={item.image} alt={item.title} className="w-20 h-20 object-cover"/>
                   <div className="p-3 flex-1">
                     <h4 className="font-medium text-sm text-gray-800">{item.title}</h4>
                     <p className="text-xs text-gray-600 mt-1">{item.description}</p>
@@ -469,26 +541,26 @@ END:VCARD`;
           </div>
         </div>
 
-        {/* About Our Company */}
+        About Our Company
         <div className="px-6 py-6 bg-white border-b">
           <h3 className="font-semibold text-gray-800 mb-4 text-xl">About Us</h3>
           <p className="text-sm text-gray-600 leading-relaxed mb-4 italic">
-            Since 2017, D'adore Interiors has been transforming spaces across the region with our signature blend of luxury and functionality. Our award-winning team of designers specializes in creating bespoke residential interiors that reflect each client's personality while enhancing everyday living.
+            Since 2017, D&apos;adore Interiors has been transforming spaces across the region with our signature blend of luxury and functionality. Our award-winning team of designers specializes in creating bespoke residential interiors that reflect each client&apos;s personality while enhancing everyday living.
           </p>
           
           <div className="relative bg-gradient-to-r from-blue-600 to-purple-600 p-8 text-white text-center rounded-lg">
           <div className="absolute inset-0 bg-black/10"></div>
           <div className="relative z-10">
             <div className="w-24 h-24 mx-auto mb-4 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm overflow-hidden border-2 border-white/30 shadow-lg">
-              <img 
+              <img
                 src="https://static.wixstatic.com/media/f55b92_c42b7a50245d4a08ae36542ccfaf1c64~mv2.png" 
-                alt="D'adore Interiors Logo"
+                alt="D&apos;adore Interiors Logo"
                 className="w-full h-full object-cover rounded-full transform hover:scale-110 transition-transform duration-300"
               />
               </div>
               <h1 className="text-4xl font-bold mb-2 font-serif tracking-tight">
                 <span className="bg-clip-text text-transparent bg-gradient-to-r text-white">
-                  D'adore
+                  D&apos;adore
                 </span>
                 <span className="text-white ml-1">Interiors LLP</span>
               </h1>
@@ -642,7 +714,7 @@ END:VCARD`;
                   </div>
                   <div className="relative">
                     <p className={`text-gray-600 italic transition-all duration-300 ${!expanded.testimonial1 ? 'line-clamp-3' : ''}`}>
-                      "I recently had the pleasure of working with Sagar on our home renovation project. From start to finish, Sagar was professional, creative and a true pleasure to work with. His attention to detail and ability to bring our vision to life exceeded our expectations. He has a great sense of style and was able to seamlessly blend our personal taste's with his organisations own expertise to create a beautiful, iconic space. The complete Dadore team was also very responsive and communicative throughout the process, ensuring that everything was running smoothly and that we were happy with the progress. I highly recommend Sagar and Dadore to anyone looking for a talented and professional interior designer. They truly made our home a beautiful abode and I couldn't be happier with the results. Thank you Sagar!"
+                      &quot;I recently had the pleasure of working with Sagar on our home renovation project. From start to finish, Sagar was professional, creative and a true pleasure to work with. His attention to detail and ability to bring our vision to life exceeded our expectations. He has a great sense of style and was able to seamlessly blend our personal taste&apos;s with his organisations own expertise to create a beautiful, iconic space. The complete Dadore team was also very responsive and communicative throughout the process, ensuring that everything was running smoothly and that we were happy with the progress. I highly recommend Sagar and Dadore to anyone looking for a talented and professional interior designer. They truly made our home a beautiful abode and I couldn&apos;t be happier with the results. Thank you Sagar!&quot;
                     </p>
                     <button 
                       onClick={() => setExpanded(prev => ({...prev, testimonial1: !prev.testimonial1}))}
@@ -672,7 +744,7 @@ END:VCARD`;
                   </div>
                   <div className="relative">
                     <p className={`text-gray-600 italic transition-all duration-300 ${!expanded.testimonial2 ? 'line-clamp-3' : ''}`}>
-                      "We approached D'adore based on the recommendation by our interior designer and it turned out to be exactly what we were looking for. Sagar was approachable for any query and his work style is thoroughly professional right from maintaining the check list, providing details of the work schedule, costing, etc. He listens to the requirements carefully and endevors to fulfill them with the best solutions. A glimpse of before and after work pics speak all. In a nutshell, A wholesome solution for all the services required for home renovation."
+                    &quot;  We approached D&apos;adore based on the recommendation by our interior designer and it turned out to be exactly what we were looking for. Sagar was approachable for any query and his work style is thoroughly professional right from maintaining the check list, providing details of the work schedule, costing, etc. He listens to the requirements carefully and endevors to fulfill them with the best solutions. A glimpse of before and after work pics speak all. In a nutshell, A wholesome solution for all the services required for home renovation. &quot;
                     </p>
                     <button 
                       onClick={() => setExpanded(prev => ({...prev, testimonial2: !prev.testimonial2}))}
@@ -702,7 +774,7 @@ END:VCARD`;
                   </div>
                   <div className="relative">
                     <p className={`text-gray-600 italic transition-all duration-300 ${!expanded.testimonial3 ? 'line-clamp-3' : ''}`}>
-                      "It was a complete pleasure to work with the D'adore team… they are very professional, proficient and adept at the work they do. They have good processes, approachable and a helpful team with very good workers for all kind of work. The best part was that they managed to finish the work before time which is absolutely unheard of… I am very thankful to Sagar and his team for a great finish to our home."
+                    &quot;  It was a complete pleasure to work with the D&apos;adore team… they are very professional, proficient and adept at the work they do. They have good processes, approachable and a helpful team with very good workers for all kind of work. The best part was that they managed to finish the work before time which is absolutely unheard of… I am very thankful to Sagar and his team for a great finish to our home. &quot;
                     </p>
                     <button 
                       onClick={() => setExpanded(prev => ({...prev, testimonial3: !prev.testimonial3}))}
@@ -728,7 +800,7 @@ END:VCARD`;
             <div className="flex flex-col md:flex-row items-center gap-6 mb-6">
               <div className="relative w-32 h-32 flex-shrink-0">
                 <div className="absolute inset-0 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full transform rotate-6"></div>
-                <img 
+                <img
                   src="https://static.wixstatic.com/media/f55b92_c42b7a50245d4a08ae36542ccfaf1c64~mv2.png" 
                   alt="Founder"
                   className="relative w-full h-full rounded-full object-cover border-4 border-white shadow-lg"
@@ -736,7 +808,7 @@ END:VCARD`;
               </div>
               
               <div className="text-center md:text-left">
-                <h4 className="text-xl font-bold text-gray-800 mb-1">Founder's name</h4>
+                <h4 className="text-xl font-bold text-gray-800 mb-1">Founder&apos;s name</h4>
                 <p className="text-amber-600 font-medium mb-3">Founder</p>
                 <div className="flex justify-center md:justify-start space-x-2 mb-4">
                   <div className="w-8 h-1 bg-amber-400 rounded-full"></div>
@@ -748,11 +820,11 @@ END:VCARD`;
             
             <div className="space-y-4 text-gray-600">
               <p className="leading-relaxed text-justify">
-                I founded D'adore Interior LLP in 2017 with a singular vision: to democratize exceptional design. What began as a passion for transforming blank spaces into soulful environments has evolved into a practice that has touched hundreds of homes and commercial spaces across Bangalore.
+                I founded D&apos;adore Interior LLP in 2017 with a singular vision: to democratize exceptional design. What began as a passion for transforming blank spaces into soulful environments has evolved into a practice that has touched hundreds of homes and commercial spaces across Bangalore.
               </p>
               
               <p className="leading-relaxed text-justify">
-                With <span className="font-semibold text-amber-600">12+ years of hands-on experience</span>, I've cultivated a design philosophy that balances aesthetic excellence with functional pragmatism. My approach is deeply collaborative—working closely with clients, contractors, and craftsmen to navigate on-site challenges and deliver solutions that stand the test of time.
+                With <span className="font-bold text-amber-600">12+ years of hands-on experience</span>, I&apos;ve cultivated a design philosophy that balances aesthetic excellence with functional pragmatism. My approach is deeply collaborative—working closely with clients, contractors, and craftsmen to navigate on-site challenges and deliver solutions that stand the test of time.
               </p>
               
               <div className="relative bg-amber-50 rounded-lg p-4 border-l-4 border-amber-400 my-4">
@@ -762,7 +834,7 @@ END:VCARD`;
                   </svg>
                 </div>
                 <p className="italic text-gray-700 pl-6">
-                  "At D'adore, we don't just design spaces—we craft the backdrop for life's most meaningful moments."
+                  At D&apos;adore, we don&apos;t just design spaces—we craft the backdrop for life&apos;s most meaningful moments
                 </p>
               </div>
             </div>
@@ -803,7 +875,7 @@ END:VCARD`;
                 </div>
               </div>
             </div>
-      </div>
+        </div>
     </div>
   );
 }
