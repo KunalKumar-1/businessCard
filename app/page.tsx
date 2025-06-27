@@ -113,7 +113,7 @@ export default function BusinessCard() {
   },
   {
     title: "Interior Renovations",
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+    image: "https://ik.imagekit.io/9xuslizm5i/JP%20Nagar%20Primero%20Morado/IMG-20250627-WA0031.jpg?updatedAt=1751034683982",
     description: "Transform existing interiors with our renovation services—whether it's a complete overhaul or functional upgrades, we bring your space back to life beautifully"
   }
   ];
