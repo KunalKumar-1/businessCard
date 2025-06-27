@@ -541,7 +541,7 @@ END:VCARD`;
           </div>
         </div>
 
-        About Our Company
+        {/* About Our Company */}
         <div className="px-6 py-6 bg-white border-b">
           <h3 className="font-semibold text-gray-800 mb-4 text-xl">About Us</h3>
           <p className="text-sm text-gray-600 leading-relaxed mb-4 italic">
