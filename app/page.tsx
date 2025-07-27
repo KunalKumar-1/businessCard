@@ -839,7 +839,7 @@ END:VCARD`;
               </div>
             </div>
             
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mt-6">
+            <div className="grid grid-cols-2 grid-cols-3 gap-3 mt-6">
               <div className="bg-gradient-to-br from-amber-50 to-amber-100 p-3 rounded-lg border border-amber-200 text-center">
                 <div className="text-2xl font-bold text-amber-600">12+</div>
                 <div className="text-xs font-medium text-amber-800">Years Experience</div>
